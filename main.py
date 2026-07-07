@@ -187,3 +187,17 @@ print('Средняя оценка за ДЗ по курсу Python:', average_h
 print('Средняя оценка за ДЗ по курсу Java:', average_hw_grade_by_course([student1, student2], 'Java'))
 print('Средняя оценка за лекции по курсу Python:', average_lecture_grade_by_course([lecturer1, lecturer2], 'Python'))
 print('Средняя оценка за лекции по курсу Git:', average_lecture_grade_by_course([lecturer1, lecturer2], 'Git'))
+
+print('Проверка ошибок:')
+
+res1 = reviewer1.rate_hw(lecturer1, 'Python', 10)
+print('reviewer1 оценивает лектора:', res1)
+
+res2 = student1.rate_lecture(reviewer1, 'Python', 10)
+print('student1 оценивает проверяющего:', res2)
+
+res3 = reviewer1.rate_hw(student2, 'Java', 10)
+print('reviewer1 оценивает student2 за Java (чужой курс):', res3)
+
+res4 = student1.rate_lecture(lecturer2, 'Java', 10)
+print('student1 оценивает лектора за Java (не изучает):', res4)
